@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Gamer</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/grid.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GAME<span>ZONE</span></div>
+        
+        <!-- Checkbox para menú móvil -->
+        <input type="checkbox" id="menu-toggle" class="menu-check">
+        <label for="menu-toggle" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="nav-links">
+            <li style="--i:1"><a href="#">INICIO</a></li>
+            <li style="--i:2"><a href="#">VIDEOJUEGOS</a></li>
+            
+            <!-- Item con Submenú -->
+            <li class="dropdown" style="--i:3">
+                <input type="checkbox" id="drop-check">
+                <label for="drop-check" class="drop-label">PLATAFORMAS ▾</label>
+                <ul class="submenu">
+                    <li><a href="#">PLAY STATION</a></li>
+                    <li><a href="#">XBOX</a></li>
+                    <li><a href="#">NINTENDO</a></li>
+                    <li><a href="#">WII</a></li>
+                    <li><a href="#">SEGA</a></li>
+                </ul>
+            </li>
+            
+            <li style="--i:4"><a href="#">CONTÁCTANOS</a></li>
+        </ul>
+    </nav>
+
+
+<section class="slider-container">
+    <div class="slider-wrapper">
+        <!-- Imagen 1 -->
+        <div class="slide">
+            <img src="imagenes/Gemini_Generated_Image_75dl0y75dl0y75dl.png" alt="Gamer 1">
+            <div class="slide-caption">NUEVOS LANZAMIENTOS</div>
+        </div>
+        <!-- Imagen 2 -->
+        <div class="slide">
+            <img src="imagenes/Gemini_Generated_Image_9vpd799vpd799vpd.png" alt="Gamer 2">
+            <div class="slide-caption">MUNDO ABIERTO</div>
+        </div>
+        <!-- Imagen 3 -->
+        <div class="slide">
+            <img src="imagenes/Gemini_Generated_Image_gl090xgl090xgl09.png" alt="Gamer 3">
+            <div class="slide-caption">COMPETICIÓN ONLINE</div>
+        </div>
+    </div>
+    <!-- Borde de luz neón inferior -->
+    <div class="slider-glow"></div>
+</section>
+
+<section class="grid-section">
+    <div class="grid-container">
+        
+        <!-- CARD 1 -->
+        <div class="card">
+            <a href="#modal1" class="card-img">
+                <img src="imagenes/MK11_AftermathPreOrderbanner.png" alt="Juego 1">
+            </a>
+            <div class="card-text">
+                <h3>MORTAL KOMBAT</h3>
+                <p>Juego de plataforma.</p>
+            </div>
+        </div>
+
+        <!-- MODAL 1 -->
+        <div id="modal1" class="modal-overlay">
+            <div class="modal-content">
+                <a href="#!" class="close-btn">&times;</a>
+                <img src="imagenes/MK11_AftermathPreOrderbanner.png" alt="Detalle">
+                <h2>MORTAL KOMBAT 1</h2>
+                <p>Embrcate en la lucha por el poder, derrtoa a Shao Khan</p>
+            </div>
+        </div>
+
+        <!-- REPETIR ESTE BLOQUE PARA LOS DEMÁS (CARD 2, 3... HASTA EL 12) -->
+        <div class="card">
+            <a href="#modal2" class="card-img">
+                <img src="imagenes/Gemini_Generated_Image_k0yqk5k0yqk5k0yq.png" alt="Juego 2">
+            </a>
+            <div class="card-text">
+                <h3>Retro Quest</h3>
+                <p>Aventura en 8 bits.</p>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal-overlay">
+            <div class="modal-content">
+                <a href="#!" class="close-btn">&times;</a>
+                <img src="imagenes/Gemini_Generated_Image_k0yqk5k0yqk5k0yq.png" alt="Detalle">
+                <h2>Retro Quest</h2>
+                <p>Descripción detallada para el segundo juego de la grilla.</p>
+            </div>
+        </div>
+
+        <!-- ... Continuar hasta tener 12 elementos ... -->
+
+        <!-- REPETIR ESTE BLOQUE PARA LOS DEMÁS (CARD 2, 3... HASTA EL 12) -->
+        <div class="card">
+            <a href="#modal3" class="card-img">
+                <img src="imagenes/Gemini_Generated_Image_v4y6buv4y6buv4y6.png" alt="Juego 2">
+            </a>
+            <div class="card-text">
+                <h3>Retro Quest</h3>
+                <p>Aventura en 8 bits.</p>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal-overlay">
+            <div class="modal-content">
+                <a href="#!" class="close-btn">&times;</a>
+                <img src="imagenes/Gemini_Generated_Image_v4y6buv4y6buv4y6.png" alt="Detalle">
+                <h2>Retro Quest</h2>
+                <p>Descripción detallada para el segundo juego de la grilla.</p>
+            </div>
+        </div>
+
+
+        <!-- REPETIR ESTE BLOQUE PARA LOS DEMÁS (CARD 2, 3... HASTA EL 12) -->
+        <div class="card">
+            <a href="#modal4" class="card-img">
+                <img src="imagenes/Gemini_Generated_Image_tqvmn0tqvmn0tqvm.png" alt="Juego 2">
+            </a>
+            <div class="card-text">
+                <h3>Retro Quest</h3>
+                <p>Aventura en 8 bits.</p>
+            </div>
+        </div>
+
+        <div id="modal4" class="modal-overlay">
+            <div class="modal-content">
+                <a href="#!" class="close-btn">&times;</a>
+                <img src="imagenes/Gemini_Generated_Image_tqvmn0tqvmn0tqvm.png" alt="Detalle">
+                <h2>Retro Quest</h2>
+                <p>Descripción detallada para el segundo juego de la grilla.</p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+</body>
+</html>
