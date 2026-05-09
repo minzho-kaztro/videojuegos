@@ -1,0 +1,90 @@
+/* --- SECCIÓN SLIDER KEN BURNS --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura controlada */
+    overflow: hidden;
+    background: #000;
+    z-index: 1; /* Un número bajo */
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: kenBurnsCycle 15s linear infinite; /* 5s por imagen */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* Títulos sobre el slider */
+.slide-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: var(--verde-neon);
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: 0 0 10px #000;
+    border-left: 5px solid var(--morado-luz);
+    padding-left: 15px;
+}
+
+/* Lógica de tiempos para 3 imágenes */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+
+/* Animación Combinada: Opacidad y Ken Burns */
+@keyframes kenBurnsCycle {
+    0% {
+        opacity: 0;
+        transform: scale(1) translate(0, 0);
+    }
+    5% {
+        opacity: 1; /* Aparece rápido */
+    }
+    33% {
+        opacity: 1;
+    }
+    38% {
+        opacity: 0; /* Desaparece antes de que empiece la siguiente */
+        transform: scale(1.2) translate(2%, -2%); /* Efecto Zoom + Movimiento */
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Efecto de luz decorativo inferior */
+.slider-glow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--verde-neon);
+    box-shadow: 0 0 20px var(--verde-neon);
+    z-index: 10;
+}
+
+/* Ajuste para móviles */
+@media screen and (max-width: 600px) {
+    .slider-container {
+        height: 250px;
+    }
+    .slide-caption {
+        font-size: 1.2rem;
+    }
+}

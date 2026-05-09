@@ -1,0 +1,179 @@
+/* Variables de color */
+:root {
+    --morado: #6a0dad;
+    --morado-luz: #bc13fe;
+    --verde-neon: #39ff14;
+    --negro: #0a0a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--negro);
+}
+
+/* Estructura Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #1a1a1a;
+    border-bottom: 2px solid var(--verde-neon);
+    box-shadow: 0 0 15px var(--verde-neon);
+    position: relative; /* O fixed si quieres que te siga al bajar */
+    z-index: 1000;      /* Un número alto para que siempre gane */
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--morado-luz);
+}
+
+.logo span {
+    color: var(--verde-neon);
+}
+
+/* Lista de enlaces */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    z-index: 1001;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    opacity: 0;
+    animation: entradaSuave 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s); /* Animación escalonada */
+}
+
+.nav-links a, .drop-label {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Efecto de Luces (Hover) */
+.nav-links a:hover, .drop-label:hover {
+    color: var(--verde-neon);
+    text-shadow: 0 0 10px var(--verde-neon), 0 0 20px var(--verde-neon);
+}
+
+/* Submenú */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--morado);
+    min-width: 180px;
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    border: 1px solid var(--verde-neon);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.submenu li {
+    margin: 0;
+    opacity: 1; /* Reset para submenú */
+    animation: none;
+}
+
+.submenu a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.submenu a:hover {
+    background: rgba(57, 255, 20, 0.1);
+}
+
+/* Lógica de apertura sin JS */
+#drop-check, .menu-check {
+    display: none;
+}
+
+.dropdown:hover .submenu,
+#drop-check:checked ~ .submenu {
+    display: block;
+}
+
+/* --- RESPONSIVE --- */
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--verde-neon);
+    margin: 2px;
+    box-shadow: 0 0 5px var(--verde-neon);
+}
+
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        height: 100vh;
+        transition: 0.5s;
+        padding-top: 50px;
+        border-top: 1px solid var(--morado);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .menu-check:checked ~ .nav-links {
+        left: 0;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        background: transparent;
+        border: none;
+        text-align: center;
+    }
+}
+
+/* Animación de entrada */
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
